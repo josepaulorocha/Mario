@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Personagem_1 = require("./Personagem");
+var Inimigo_1 = require("./Inimigo");
+var PowerUps_1 = require("./PowerUps");
+var MARIO = new Personagem_1.Personagem("Mario");
+var BOWSER = new Inimigo_1.Inimigo("Bowser");
+var POWERUP = new PowerUps_1.PowerUps();
+MARIO.printPular();
+BOWSER.atacar(MARIO);
