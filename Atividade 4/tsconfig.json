@@ -1,0 +1,28 @@
+{
+    "vidaMaxima": 3,
+    "tiposDePowerUps": ["Cogumelo", "Flor de fogo", "Estrela", "Pena"],
+    "personagens": [
+      {
+        "nome": "Mario",
+        "vidas": 3,
+        "inventario": []
+      },
+      {
+        "nome": "Luigi",
+        "vidas": 3,
+        "inventario": []
+      }
+    ],
+    "inimigos": [
+      {
+        "tipo": "Goomba"
+      },
+      {
+        "tipo": "Koopa Troopa"
+      },
+      {
+        "tipo": "Bowser"
+      }
+    ]
+  }
+  

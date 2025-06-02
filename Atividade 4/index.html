@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Relatório Mario Wolrd</title>
+</head>
+<body>
+    <h1>Mario World</h1>
+    
+    <h2>Constantes</h2>
+    <ul>
+        <li><strong>VIDA_MAXIMA</strong> = 3 (número máximo de vidas dos personagens)</li>
+        <li><strong>TIPOS_DE_POWERUPS</strong> = ["Cogumelo", "Flor de fogo", "Estrela", "Pena"] (tipos de power-ups disponíveis)</li>
+    </ul>
+    
+    <h2>Classes Principais</h2>
+    
+    <h3>Personagem</h3>
+    <p><strong>Propriedades:</strong></p>
+    <ul>
+        <li>nome: string</li>
+        <li>vidas: number</li>
+        <li>inventario: string[]</li>
+    </ul>
+    <p><strong>Métodos:</strong></p>
+    <ul>
+        <li>printPular() - Exibe mensagem de pulo no console</li>
+        <li>coletarPowerUp(powerUp: string) - Adiciona power-up ao inventário</li>
+        <li>desviar(): boolean - Retorna true com 40% de chance</li>
+    </ul>
+    
+    <h3>Inimigo</h3>
+    <p><strong>Propriedades:</strong></p>
+    <ul>
+        <li>tipo: string</li>
+    </ul>
+    <p><strong>Métodos:</strong></p>
+    <ul>
+        <li>atacar(personagem: Personagem) - Realiza um ataque ao personagem</li>
+    </ul>
+    
+    <h3>PowerUps</h3>
+    <p><strong>Propriedades:</strong></p>
+    <ul>
+        <li>tipo: string</li>
+    </ul>
+    <p><strong>Métodos:</strong></p>
+    <ul>
+        <li>gerarPowerUp(): string - Retorna um power-up aleatório</li>
+    </ul>
+    
+    <h2>Arrays:</h2>
+    <ul>
+        <li><strong>inimigos</strong>: Contém 3 instâncias de Inimigo ("Goomba", "Koopa Troopa", "Bowser")</li>
+        <li><strong>personagens</strong>: Contém 2 instâncias de Personagem ("Mario", "Luigi")</li>
+        <li><strong>randomArrayInt</strong>: Array com 10 números aleatórios entre 1 e 100</li>
+    </ul>
+    
+    <h2>Fluxo do jogo</h2>
+    <ol>
+        <li>São geradas 10 rodadas (baseadas nos números aleatórios)</li>
+        <li>Para cada número:
+            <ul>
+                <li>Se ≤ 60 (60% chance): Inimigo aleatório ataca Mario</li>
+                <li>Se > 60 (40% chance): Power-up aparece e Mario coleta</li>
+            </ul>
+        </li>
+        <li>O jogo termina se Mario chegar a 0 vidas ou após todas as rodadas</li>
+    </ol>
+</body>
+</html>
