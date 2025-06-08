@@ -8,10 +8,11 @@ export class Inimigo {
     tipo: string
     
     atacar(personagem: Personagem) {
-        if (personagem.desviar()) {
+        const desviou = personagem.desviar()
+
+        if (desviou) {
             console.log(`${personagem.nome} desviou do ataque de ${this.tipo}!`)
-            const pontos = personagem.atacarInimigo() // Contra-ataca
-            console.log(`${personagem.nome} contra-atacou e ganhou ${pontos} pontos.`)
+            const pontos = personagem.atacarInimigo(true) // Contra-ataca
         } else if (personagem.vidas > 0) {
             personagem.vidas -= 1
             personagem.pontuacoesRodadas.push(-100)

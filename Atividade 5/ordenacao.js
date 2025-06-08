@@ -5,15 +5,15 @@ function mergeSort(arr) {
     if (arr.length <= 1) {
         return arr;
     }
-    var middle = Math.floor(arr.length / 2);
-    var left = mergeSort(arr.slice(0, middle));
-    var right = mergeSort(arr.slice(middle));
+    const middle = Math.floor(arr.length / 2);
+    const left = mergeSort(arr.slice(0, middle));
+    const right = mergeSort(arr.slice(middle));
     return merge(left, right);
 }
 function merge(left, right) {
-    var result = [];
-    var i = 0;
-    var j = 0;
+    const result = [];
+    let i = 0;
+    let j = 0;
     while (i < left.length && j < right.length) {
         if (left[i] < right[j]) {
             result.push(left[i]);

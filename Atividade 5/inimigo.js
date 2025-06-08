@@ -1,24 +1,23 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Inimigo = void 0;
-var Inimigo = /** @class */ (function () {
-    function Inimigo(tipo) {
+class Inimigo {
+    constructor(tipo) {
         this.tipo = tipo;
     }
-    Inimigo.prototype.atacar = function (personagem) {
-        if (personagem.desviar()) {
-            console.log("".concat(personagem.nome, " desviou do ataque de ").concat(this.tipo, "!"));
-            var pontos = personagem.atacarInimigo(); // Contra-ataca
-            console.log("".concat(personagem.nome, " contra-atacou e ganhou ").concat(pontos, " pontos."));
+    atacar(personagem) {
+        const desviou = personagem.desviar();
+        if (desviou) {
+            console.log(`${personagem.nome} desviou do ataque de ${this.tipo}!`);
+            const pontos = personagem.atacarInimigo(true); // Contra-ataca
         }
         else if (personagem.vidas > 0) {
             personagem.vidas -= 1;
             personagem.pontuacoesRodadas.push(-100);
-            console.log("".concat(this.tipo, " atacou ").concat(personagem.nome));
-            console.log("".concat(personagem.nome, " agora tem ").concat(personagem.vidas, " vidas"));
-            console.log("".concat(personagem.nome, " perdeu 100 pontos."));
+            console.log(`${this.tipo} atacou ${personagem.nome}`);
+            console.log(`${personagem.nome} agora tem ${personagem.vidas} vidas`);
+            console.log(`${personagem.nome} perdeu 100 pontos.`);
         }
-    };
-    return Inimigo;
-}());
+    }
+}
 exports.Inimigo = Inimigo;

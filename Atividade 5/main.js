@@ -1,45 +1,45 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var personagem_1 = require("./personagem");
-var inimigo_1 = require("./inimigo");
-var powerups_1 = require("./powerups");
-var ordenacao_1 = require("./ordenacao");
+const personagem_1 = require("./personagem");
+const inimigo_1 = require("./inimigo");
+const powerups_1 = require("./powerups");
+const ordenacao_1 = require("./ordenacao");
 // Instanciando objetos e arrays
-var inimigos = [
+const inimigos = [
     new inimigo_1.Inimigo("Goomba"),
     new inimigo_1.Inimigo("Koopa Troopa"),
     new inimigo_1.Inimigo("Bowser")
 ];
-var personagens = [
+const personagens = [
     new personagem_1.Personagem("Mario"),
     new personagem_1.Personagem("Luigi")
 ];
-var powerUp = new powerups_1.PowerUps();
+const powerUp = new powerups_1.PowerUps();
 // Gera array de números aleatórios para simular eventos durante as rodadas
-var randomArrayInt = Array.from({ length: 10 }, function () { return Math.floor(Math.random() * 100) + 1; });
+const randomArrayInt = Array.from({ length: 10 }, () => Math.floor(Math.random() * 100) + 1);
 console.log("=== Início da partida ===");
-for (var rodada = 0; rodada < randomArrayInt.length; rodada++) {
-    var num = randomArrayInt[rodada];
-    console.log("\nRodada ".concat(rodada + 1, " - N\u00FAmero gerado: ").concat(num));
+for (let rodada = 0; rodada < randomArrayInt.length; rodada++) {
+    const num = randomArrayInt[rodada];
+    console.log(`\nRodada ${rodada + 1} - Número gerado: ${num}`);
     if (num <= 60) {
         // Ataque de inimigo aleatório
-        var inimigo = inimigos[Math.floor(Math.random() * inimigos.length)];
+        const inimigo = inimigos[Math.floor(Math.random() * inimigos.length)];
         inimigo.atacar(personagens[0]);
     }
     else {
         // Gera e coleta PowerUp
-        var powerUpGerado = powerUp.gerarPowerUp();
-        console.log("Power-Up ".concat(powerUpGerado, " apareceu!"));
+        const powerUpGerado = powerUp.gerarPowerUp();
+        console.log(`Power-Up ${powerUpGerado} apareceu!`);
         personagens[0].coletarPowerUp(powerUpGerado);
     }
     if (personagens[0].vidas <= 0) {
-        console.log("\n".concat(personagens[0].nome, " perdeu todas as vidas! Fim de jogo."));
+        console.log(`\n${personagens[0].nome} perdeu todas as vidas! Fim de jogo.`);
         break;
     }
 }
 // Chamando o Merge Sort
-var sortedArray = (0, ordenacao_1.mergeSort)(personagens[0].pontuacoesRodadas).reverse();
+const sortedArray = (0, ordenacao_1.mergeSort)(personagens[0].pontuacoesRodadas).reverse();
 console.log("Ranking de Pontuações:");
-for (var i = 0; i < sortedArray.length; i++) {
-    console.log("".concat(i + 1, " - ").concat(sortedArray[i]));
+for (let i = 0; i < sortedArray.length; i++) {
+    console.log(`${i + 1} - ${sortedArray[i]}`);
 }

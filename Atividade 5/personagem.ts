@@ -30,10 +30,10 @@ export class Personagem {
         return chance <= 0.4 // 40% de chance de desviar
     }
 
-    atacarInimigo(): number {
+    atacarInimigo(desviou: boolean): number {
         let pontos: number;
     
-        if (!this.desviar()) {
+        if (!desviou) {
             pontos = -100;
             console.log(`${this.nome} falhou ao desviar e foi atingido! Perdeu 100 pontos.`);
         } else {
