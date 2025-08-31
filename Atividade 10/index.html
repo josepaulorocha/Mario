@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario World - O Jogo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>Mario World</h1>
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <div id="ui-panel">
+            <div id="player-stats">
+                <h2>Status do Jogador</h2>
+                <p><strong>Jogador da Vez:</strong> <span id="current-player">N/A</span></p>
+                <p><strong>Vidas:</strong> <span id="player-lives">3</span></p>
+                <p><strong>Pontuação Total:</strong> <span id="player-score">0</span></p>
+            </div>
+            <div id="inventory">
+                <h2>Inventário (Pilha)</h2>
+                <ul id="inventory-list">
+                    <li>(Vazio)</li>
+                </ul>
+            </div>
+            <div id="event-log">
+                <h2>Log de Eventos (Fila)</h2>
+                <div id="log-messages"></div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="dist/main.js"></script>
+</body>
+</html>
