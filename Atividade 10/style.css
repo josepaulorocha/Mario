@@ -1,0 +1,118 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    background-color: #5c94fc;
+    color: white;
+    margin: 0;
+    overflow: hidden;
+}
+#game-canvas {
+    background-color: #78d4ff;
+    border: 4px solid #000;
+    display: block;
+    margin: 10px auto;
+}
+
+/* Classe de botão principal para consistência */
+.main-button, #character-selection button {
+    padding: 12px 25px;
+    font-size: 18px;
+    margin: 10px;
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 8px;
+    background-color: #ff4122;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.main-button:hover, #character-selection button:hover {
+    background-color: #ff6347;
+}
+#luigi-btn { background-color: #32cd32; }
+#luigi-btn:hover { background-color: #3cb371; }
+#peach-btn { background-color: #ff69b4; }
+#peach-btn:hover { background-color: #ff8cbf; }
+
+#game-ui {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 800px;
+    margin: 0 auto;
+}
+#game-info {
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+/* Telas de Overlay */
+#ranking-screen, #phase-complete-screen, #data-structures-screen {
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+#ranking-screen h2, #phase-complete-screen h2 {
+    color: gold; font-size: 3em; margin-bottom: 30px;
+}
+#ranking-screen ol {
+    list-style-type: none; padding: 0; text-align: center;
+    font-size: 1.8em; color: white; margin-bottom: 20px;
+}
+#ranking-screen ol li {
+    padding: 10px 0; border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+}
+#ranking-screen ol li:last-child { border-bottom: none; }
+#phase-complete-message {
+    font-size: 2.5em; margin-bottom: 20px; color: lightblue;
+}
+
+/* Estilos da Tela de Dados */
+#data-structures-screen .data-panel {
+    background-color: #2c3e50; padding: 20px 40px; border-radius: 15px;
+    border: 3px solid #3498db; width: 80%; max-width: 1200px; color: #ecf0f1;
+}
+#data-structures-screen h2 {
+    color: #f1c40f; border-bottom: 2px solid #f1c40f;
+    padding-bottom: 10px; margin-top: 0;
+}
+.data-columns {
+    display: flex; justify-content: space-between; gap: 20px; margin: 20px 0;
+}
+.data-column {
+    flex: 1; background-color: rgba(0, 0, 0, 0.2); padding: 15px;
+    border-radius: 8px; height: 350px; overflow-y: auto;
+}
+.data-column h3 { margin-top: 0; color: #3498db; }
+.data-column ul { list-style: none; padding: 0; font-size: 14px; text-align: left; }
+.data-column ul li {
+    background-color: #34495e; margin-bottom: 5px; padding: 8px;
+    border-radius: 4px; border-left: 4px solid #f1c40f;
+}
+
+/* Seletor de Personagem na Tela de Dados */
+#data-char-selector {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #3498db;
+    margin-bottom: 10px;
+}
+.char-selector-btn {
+    padding: 8px 15px; font-size: 16px; margin: 0 5px;
+    border: 2px solid #3498db; border-radius: 8px;
+    background-color: transparent; color: #3498db;
+    cursor: pointer; transition: all 0.3s ease;
+}
+.char-selector-btn.active, .char-selector-btn:hover {
+    background-color: #3498db;
+    color: white;
+}

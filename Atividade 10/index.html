@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Mario Web Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:,">
+</head>
+<body>
+    <h1>Super Mario Game</h1>
+    <div id="character-selection">
+        <h2>Escolha seu personagem:</h2>
+        <button id="mario-btn">Mario</button>
+        <button id="luigi-btn">Luigi</button>
+        <button id="peach-btn">Peach</button>
+    </div>
+
+    <div id="game-container" style="display: none;">
+        <canvas id="game-canvas" width="800" height="400"></canvas>
+        <div id="game-ui">
+            <div id="game-info">
+                <p>Pontuação: <span id="score">0</span></p>
+                <p>Vidas: <span id="lives">3</span></p>
+                <p>Próximo Bônus em: <span id="next-bonus">1000</span></p>
+            </div>
+            <button id="toggle-data-btn" class="main-button">Ver Dados</button>
+        </div>
+    </div>
+
+    <div id="phase-complete-screen" style="display: none;">
+        <h2 id="phase-complete-message"></h2>
+        <button id="continue-btn" class="main-button">Continuar</button>
+        <button id="view-phase-data-btn" class="main-button">Ver Dados da Fase</button>
+    </div>
+
+    <div id="ranking-screen" style="display: none;">
+        <h2>Ranking Final</h2>
+        <ol id="ranking-list"></ol>
+        <button id="play-again-btn" class="main-button">Jogar Novamente</button>
+        <button id="view-final-data-btn" class="main-button">Ver Dados Finais</button>
+    </div>
+
+    <div id="data-structures-screen" style="display: none;">
+        <div class="data-panel">
+            <h2>Estruturas de Dados</h2>
+            <div id="data-char-selector"></div>
+            <div class="data-columns">
+                <div class="data-column">
+                    <h3>Fila de Logs (FilaDupla)</h3>
+                    <ul id="log-queue-list"></ul>
+                </div>
+                <div class="data-column">
+                    <h3>Pilha de Ações (Pilha)</h3>
+                    <ul id="action-stack-list"></ul>
+                </div>
+                <div class="data-column">
+                    <h3>Inimigos Derrotados (Dicionário)</h3>
+                    <ul id="enemy-dict-list"></ul>
+                </div>
+            </div>
+            <button id="close-data-btn" class="main-button">Fechar</button>
+        </div>
+    </div>
+
+    <script type="module" src="./dist/web-main.js"></script>
+</body>
+</html>
